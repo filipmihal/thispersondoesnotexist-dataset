@@ -1,1 +1,1 @@
-# thispersondoesnotexist-dataset
+# Dataset of fake faces
