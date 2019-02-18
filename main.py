@@ -53,7 +53,6 @@ class ThisPersonIsFake:
         self.save_picture_from_web()
         new_hash = self.get_image_hash(self.default_path)
         if self.is_duplicated(new_hash):
-            print("duplicated")
             return False
         else:
             self.move_image_to_db()
@@ -62,12 +61,9 @@ class ThisPersonIsFake:
 
 
 fake = ThisPersonIsFake()
-for a in range(0, 200):
-    time.sleep(2)
+duplicated = 0
+for a in range(0, 236):
+    time.sleep(0.1)
     if not fake.run():
-        print("!!!!!!!!!!")
-        break
-# todo: repeat
-print('fff')
-# todo: if there is 5 pictures in a row that were repeated then stop the process
-
+        duplicated += 1
+        print("duplicated: " + str(duplicated))
